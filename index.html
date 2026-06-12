@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora de Dosimetria Penal</title>
+</head>
+<body>
+    <div class="screen-frame" data-name="Html → Body">
+        <header class="top-app-bar" data-name="Header - TopAppBar">
+            <div class="top-app-bar__brand" data-name="Container">
+                <div class="top-app-bar__logo" data-name="TJPR Logo">
+                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
+                </div>
+                <div class="top-app-bar__title" data-name="Heading 1">
+                    <span>Calculadora de</span>
+                    <span>Dosimetria Penal</span>
+                </div>
+            </div>
+            <div class="top-app-bar__profile" data-name="Container">
+                <div class="top-app-bar__profile-text" data-name="Container">
+                    <span>Magistrado</span>
+                    <span>TJPR</span>
+                </div>
+                <div class="top-app-bar__avatar" data-name="Container"></div>
+            </div>
+        </header>
+
+        <main class="main-frame" data-name="Main">
+            <section class="breadcrumbs-step" data-name="Breadcrumbs & Step Indicator">
+                <div class="breadcrumbs-step__item" data-name="Container">DASHBOARD</div>
+                <div class="breadcrumbs-step__separator" data-name="Container">
+                    <img src="assets/figma/icon-6-53.svg" alt="">
+                </div>
+                <div class="breadcrumbs-step__step" data-name="Container">1ª FASE - PENA-BASE</div>
+            </section>
+
+            <div class="content-columns" data-name="Container">
+                <section class="data-entry-sidebar-left" data-name="Data Entry Sidebar (Left)">
+                    <div class="section section-delito" data-name="Section">
+                        <div class="section__heading" data-name="Heading 2">Dados do Delito</div>
+                        <div class="section__fields" data-name="Container">
+                            <div class="field-row" data-name="Container">
+                                <label class="field-label" data-name="Label">PENA MÍNIMA (ANOS)</label>
+                                <div class="field-input" data-name="Input">
+                                    <span class="field-value" data-name="Container">6</span>
+                                </div>
+                            </div>
+                            <div class="field-row" data-name="Container">
+                                <label class="field-label" data-name="Label">PENA MÁXIMA (ANOS)</label>
+                                <div class="field-input" data-name="Input">
+                                    <span class="field-value" data-name="Container">20</span>
+                                </div>
+                            </div>
+                            <div class="section__interval" data-name="HorizontalBorder">
+                                <span data-name="Container">INTERVALO DE PENA:</span>
+                                <span data-name="Container">14 anos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section section-result-card" data-name="Section - Result Card">
+                        <div class="section-result-card__shadow" data-name="Section - Result Card:shadow"></div>
+                        <div class="section-result-card__title" data-name="Heading 2">CÁLCULO DINÂMICO</div>
+                        <div class="section-result-card__content" data-name="Container">
+                            <div class="section-result-card__value" data-name="Container">6 anos, 0 meses</div>
+                            <div class="section-result-card__note" data-name="Container">Nenhuma circunstância negativa aplicada.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="circumstances-grid" data-name="Circumstances Grid (Right)">
+                    <div class="section section-circumstances" data-name="Section">
+                        <div class="section-circumstances__header" data-name="Container">
+                            <div class="section-circumstances__title" data-name="Heading 2">
+                                <span>Art. 59 -</span>
+                                <span>Circunstâncias Judiciais</span>
+                            </div>
+                            <div class="section-circumstances__hint" data-name="Container">
+                                Selecione as circunstâncias negativas (fração 1/8 cada)
+                            </div>
+                        </div>
+                        <div class="section-circumstances__quantity" data-name="Container">
+                            <span data-name="Text">QUANTIDADE</span>
+                            <span data-name="Container">0 / 8</span>
+                        </div>
+
+                        <div class="circumstances-list" data-name="Container">
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">CULPABILIDADE</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Reprovabilidade da conduta para além do tipo penal.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-118.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">ANTECEDENTES</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Existência de condenações definitivas anteriores.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-130.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">CONDUTA SOCIAL</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Relacionamento no trabalho, família e comunidade.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-142.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">PERSONALIDADE</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Perfil psicológico e moral do agente.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-154.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">MOTIVOS</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Razões que levaram à prática do crime.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-166.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">CIRCUNSTÂNCIAS</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Local, tempo e modo de execução do delito.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-178.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">CONSEQUÊNCIAS</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Danos causados à vítima ou à sociedade.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-190.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+
+                            <article class="circumstance-card" data-name="Container">
+                                <div class="circumstance-card__heading" data-name="Paragraph">
+                                    <div class="circumstance-card__title">COMPORTAMENTO VÍTIMA</div>
+                                    <img src="assets/figma/icon-6-113.svg" alt="">
+                                </div>
+                                <div class="circumstance-card__description" data-name="Container">
+                                    Contribuição da vítima para a infração.
+                                </div>
+                                <div class="circumstance-card__toggle" data-name="Container">
+                                    <img src="assets/figma/icon-6-204.svg" alt="">
+                                    <span>NEGATIVA</span>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="section-circumstances__actions" data-name="HorizontalBorder">
+                            <button class="action-button action-button--outline">LIMPAR CAMPOS</button>
+                            <button class="action-button action-button--primary">
+                                <span>PROSSEGUIR PARA 2ª FASE</span>
+                                <img src="assets/figma/icon-6-211.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer" data-name="Footer">
+            <div class="footer__content" data-name="Container">
+                <div class="footer__copyright" data-name="Container">
+                    © 2024 Tribunal de Justiça do Estado do Paraná
+                </div>
+                <div class="footer__links" data-name="Container">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Suporte Técnico</a>
+                </div>
+            </div>
+        </footer>
+
+        <nav class="bottom-nav-bar" data-name="BottomNavBar (Mobile Only)">
+            <a class="bottom-nav-bar__item bottom-nav-bar__item--active" data-name="Container">
+                <img src="assets/figma/icon-bottom-1.svg" alt="">
+                <span>Calculadora</span>
+            </a>
+            <a class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-2.svg" alt="">
+                <span>Histórico</span>
+            </a>
+            <a class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-3.svg" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>
