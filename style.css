@@ -228,6 +228,33 @@ button {
   padding-top: 16px;
   border-top: 1px solid #C4C6CF;
 }
+.section__interval span:last-child {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Development notice toast */
+.dev-toast {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  bottom: 24px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFFFFF;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+  z-index: 1100;
+}
+.dev-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
 .section-result-card {
   position: relative;
   overflow: hidden;
