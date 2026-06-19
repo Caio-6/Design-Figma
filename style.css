@@ -8,7 +8,8 @@ html, body {
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 24px;
   background: #F8F9FA;
   font-family: Inter, system-ui, sans-serif;
   color: #44474E;
@@ -22,7 +23,8 @@ button {
   cursor: pointer;
 }
 .screen-frame {
-  width: 390px;
+  width: min(100%, 1120px);
+  max-width: 1120px;
   position: relative;
   padding: 112px 0 8px;
   background: #F8F9FA;
@@ -88,7 +90,7 @@ button {
   background: #C4C6CF;
 }
 .main-frame {
-  width: 358px;
+  width: min(100%, 1040px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -117,6 +119,7 @@ button {
 .content-columns {
   display: grid;
   gap: 24px;
+  grid-template-columns: 1fr;
 }
 .data-entry-sidebar-left,
 .circumstances-grid {
@@ -145,8 +148,8 @@ button {
   color: #002046;
 }
 .section__fields {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 .field-row {
@@ -182,6 +185,12 @@ button {
   background: #FFFFFF;
   border: 1px solid #C4C6CF;
   border-radius: 4px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field-input:hover,
+.field-input:focus-within {
+  border-color: #002046;
+  box-shadow: 0 0 0 4px rgba(0, 32, 70, 0.08);
 }
 .field-input__control {
   width: 100%;
@@ -193,6 +202,10 @@ button {
   color: #44474E;
   font-family: inherit;
   min-height: 44px;
+}
+.field-input__control:hover,
+.field-input__control:focus {
+  cursor: text;
 }
 .field-input__control::-webkit-outer-spin-button,
 .field-input__control::-webkit-inner-spin-button {
@@ -326,6 +339,13 @@ button {
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.circumstance-card__toggle:hover {
+  transform: translateY(-1px);
+}
+.circumstance-card__toggle:hover .circumstance-card__toggle-track {
+  background: #D8DBDF;
 }
 .circumstance-card__toggle-track {
   position: relative;
@@ -334,6 +354,7 @@ button {
   border-radius: 999px;
   background: #E7E8E9;
   flex-shrink: 0;
+  transition: background 0.2s ease;
 }
 .circumstance-card__toggle-ball {
   position: absolute;
@@ -389,10 +410,18 @@ button {
   border-color: #002046;
   color: #002046;
 }
+.action-button--outline:hover,
+.action-button--outline:focus-visible {
+  background: rgba(0, 32, 70, 0.08);
+}
 .action-button--primary {
   background: #002046;
   color: #FFFFFF;
   border-color: #002046;
+}
+.action-button--primary:hover,
+.action-button--primary:focus-visible {
+  background: #0E355F;
 }
 .footer {
   background: #F3F4F5;
@@ -416,6 +445,7 @@ button {
 .bottom-nav-bar {
   margin: 24px auto 0;
   width: calc(100% - 32px);
+  max-width: 420px;
   background: #1B365D;
   border-top: 1px solid #C4C6CF;
   border-radius: 8px;
@@ -434,7 +464,86 @@ button {
   font-size: 12px;
   line-height: 1.3333333;
   font-weight: 700;
+  transition: transform 0.18s ease, color 0.18s ease, filter 0.18s ease;
+}
+.bottom-nav-bar__item:hover,
+.bottom-nav-bar__item:focus-visible {
+  color: #87A0CD;
+  transform: translateY(-2px);
+}
+.bottom-nav-bar__item:hover img,
+.bottom-nav-bar__item:focus-visible img {
+  filter: brightness(1.2) saturate(1.2);
 }
 .bottom-nav-bar__item--active {
   color: #87A0CD;
+}
+
+@media (min-width: 640px) {
+  body {
+    padding: 32px;
+  }
+
+  .screen-frame {
+    padding: 132px 0 16px;
+  }
+
+  .top-app-bar {
+    padding: 12px 24px;
+  }
+
+  .main-frame {
+    gap: 28px;
+  }
+
+  .content-columns {
+    grid-template-columns: minmax(280px, 420px) minmax(320px, 1fr);
+    align-items: start;
+  }
+
+  .section__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section__interval {
+    grid-column: 1 / -1;
+  }
+
+  .bottom-nav-bar {
+    display: none;
+  }
+
+  .footer__content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 40px;
+  }
+
+  .screen-frame {
+    padding: 140px 0 24px;
+  }
+
+  .content-columns {
+    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+
+  .section-delito,
+  .section-circumstances {
+    padding: 32px;
+  }
+
+  .top-app-bar__logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .top-app-bar__title {
+    font-size: 22px;
+  }
 }

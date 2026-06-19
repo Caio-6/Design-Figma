@@ -223,7 +223,7 @@
         <footer class="footer" data-name="Footer">
             <div class="footer__content" data-name="Container">
                 <div class="footer__copyright" data-name="Container">
-                    © 2024 Tribunal de Justiça do Estado do Paraná
+                    © 2026 Tribunal de Justiça do Estado do Paraná
                 </div>
                 <div class="footer__links" data-name="Container">
                     <a href="#">Termos de Uso</a>
@@ -248,27 +248,7 @@
             </a>
         </nav>
     </div>
-    <script>
-        const toggleButtons = document.querySelectorAll('.circumstance-card__toggle');
-        const quantityValue = document.querySelector('.section-circumstances__quantity span:last-child');
-
-        function updateQuantity() {
-            const selectedCount = Array.from(toggleButtons).filter(button => button.getAttribute('aria-pressed') === 'true').length;
-            if (quantityValue) {
-                quantityValue.textContent = `${selectedCount} / ${toggleButtons.length}`;
-            }
-        }
-
-        toggleButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const isPressed = button.getAttribute('aria-pressed') === 'true';
-                button.setAttribute('aria-pressed', String(!isPressed));
-                updateQuantity();
-            });
-        });
-
-        updateQuantity();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 
