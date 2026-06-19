@@ -183,6 +183,25 @@ button {
   border: 1px solid #C4C6CF;
   border-radius: 4px;
 }
+.field-input__control {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #44474E;
+  font-family: inherit;
+  min-height: 44px;
+}
+.field-input__control::-webkit-outer-spin-button,
+.field-input__control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.field-input__control[type=number] {
+  -moz-appearance: textfield;
+}
 .field-value {
   font-size: 16px;
   font-weight: 600;
@@ -297,14 +316,52 @@ button {
 .circumstance-card__toggle {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
+  gap: 10px;
+  padding: 8px 12px;
   border-radius: 12px;
-  background: #E7E8E9;
+  border: 1px solid transparent;
+  background: transparent;
   color: #002046;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.circumstance-card__toggle-track {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  background: #E7E8E9;
+  flex-shrink: 0;
+}
+.circumstance-card__toggle-ball {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px #C4C6CF;
+  transition: left 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.circumstance-card__toggle[aria-pressed="true"] .circumstance-card__toggle-track {
+  background: #002046;
+}
+.circumstance-card__toggle[aria-pressed="true"] .circumstance-card__toggle-ball {
+  left: calc(100% - 18px - 2px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+.circumstance-card__toggle[aria-pressed="true"] {
+  color: #002046;
+}
+.circumstance-card__toggle:focus-visible {
+  outline: 2px solid #002046;
+  outline-offset: 2px;
+}
+.circumstance-card__toggle img {
+  display: none;
 }
 .section-circumstances__actions {
   display: flex;

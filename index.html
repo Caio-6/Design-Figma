@@ -38,19 +38,19 @@
 
             <div class="content-columns" data-name="Container">
                 <section class="data-entry-sidebar-left" data-name="Data Entry Sidebar (Left)">
-                    <div class="section section-delito" data-name="Section">
+                    <form id="dosimetria-form" class="section section-delito" data-name="Form">
                         <div class="section__heading" data-name="Heading 2">Dados do Delito</div>
                         <div class="section__fields" data-name="Container">
                             <div class="field-row" data-name="Container">
-                                <label class="field-label" data-name="Label">PENA MÍNIMA (ANOS)</label>
+                                <label class="field-label" for="pena-minima" data-name="Label">PENA MÍNIMA (ANOS)</label>
                                 <div class="field-input" data-name="Input">
-                                    <span class="field-value" data-name="Container">6</span>
+                                    <input id="pena-minima" class="field-input__control" data-name="Input" type="number" name="pena-minima" min="0" step="1" value="6" aria-label="Pena mínima (anos)">
                                 </div>
                             </div>
                             <div class="field-row" data-name="Container">
-                                <label class="field-label" data-name="Label">PENA MÁXIMA (ANOS)</label>
+                                <label class="field-label" for="pena-maxima" data-name="Label">PENA MÁXIMA (ANOS)</label>
                                 <div class="field-input" data-name="Input">
-                                    <span class="field-value" data-name="Container">20</span>
+                                    <input id="pena-maxima" class="field-input__control" data-name="Input" type="number" name="pena-maxima" min="0" step="1" value="20" aria-label="Pena máxima (anos)">
                                 </div>
                             </div>
                             <div class="section__interval" data-name="HorizontalBorder">
@@ -58,7 +58,7 @@
                                 <span data-name="Container">14 anos</span>
                             </div>
                         </div>
-                    </div>
+                    </form>
 
                     <div class="section section-result-card" data-name="Section - Result Card">
                         <div class="section-result-card__shadow" data-name="Section - Result Card:shadow"></div>
@@ -95,10 +95,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Reprovabilidade da conduta para além do tipo penal.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-118.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -109,10 +110,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Existência de condenações definitivas anteriores.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-130.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -123,10 +125,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Relacionamento no trabalho, família e comunidade.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-142.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -137,10 +140,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Perfil psicológico e moral do agente.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-154.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -151,10 +155,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Razões que levaram à prática do crime.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-166.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -165,10 +170,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Local, tempo e modo de execução do delito.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-178.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -179,10 +185,11 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Danos causados à vítima ou à sociedade.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-190.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
 
                             <article class="circumstance-card" data-name="Container">
@@ -193,16 +200,17 @@
                                 <div class="circumstance-card__description" data-name="Container">
                                     Contribuição da vítima para a infração.
                                 </div>
-                                <div class="circumstance-card__toggle" data-name="Container">
+                                <button type="button" class="circumstance-card__toggle" data-name="Container" aria-pressed="false">
+                                    <span class="circumstance-card__toggle-track" aria-hidden="true"><span class="circumstance-card__toggle-ball"></span></span>
                                     <img src="assets/figma/icon-6-204.svg" alt="">
                                     <span>NEGATIVA</span>
-                                </div>
+                                </button>
                             </article>
                         </div>
 
                         <div class="section-circumstances__actions" data-name="HorizontalBorder">
-                            <button class="action-button action-button--outline">LIMPAR CAMPOS</button>
-                            <button class="action-button action-button--primary">
+                            <button type="reset" form="dosimetria-form" class="action-button action-button--outline">LIMPAR CAMPOS</button>
+                            <button type="submit" form="dosimetria-form" class="action-button action-button--primary">
                                 <span>PROSSEGUIR PARA 2ª FASE</span>
                                 <img src="assets/figma/icon-6-211.svg" alt="">
                             </button>
@@ -240,5 +248,27 @@
             </a>
         </nav>
     </div>
+    <script>
+        const toggleButtons = document.querySelectorAll('.circumstance-card__toggle');
+        const quantityValue = document.querySelector('.section-circumstances__quantity span:last-child');
+
+        function updateQuantity() {
+            const selectedCount = Array.from(toggleButtons).filter(button => button.getAttribute('aria-pressed') === 'true').length;
+            if (quantityValue) {
+                quantityValue.textContent = `${selectedCount} / ${toggleButtons.length}`;
+            }
+        }
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const isPressed = button.getAttribute('aria-pressed') === 'true';
+                button.setAttribute('aria-pressed', String(!isPressed));
+                updateQuantity();
+            });
+        });
+
+        updateQuantity();
+    </script>
 </body>
 </html>
+
