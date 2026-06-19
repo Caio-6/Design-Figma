@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Perfil</title>
+</head>
+<body class="perfil-page">
+    <div class="screen-frame perfil-screen-frame">
+        <header class="top-app-bar perfil-top-app-bar" data-name="Header - TopAppBar">
+            <div class="top-app-bar__brand" data-name="Container">
+                <div class="top-app-bar__logo perfil-top-app-bar__logo" data-name="TJPR Logo">
+                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
+                </div>
+                <div class="top-app-bar__title perfil-top-app-bar__title" data-name="Heading 1">
+                    <span>TJPR DOSIMETRIA</span>
+                </div>
+            </div>
+            <a class="perfil-header-avatar" href="perfil.html" aria-label="Perfil do magistrado">
+                <span class="perfil-avatar-icon" aria-hidden="true"></span>
+            </a>
+        </header>
+
+        <main class="perfil-main" aria-label="Tela de perfil">
+            <aside class="perfil-sidebar" aria-label="Resumo do perfil">
+                <section class="perfil-summary-card">
+                    <div class="perfil-photo-wrap">
+                        <div class="perfil-photo" aria-hidden="true">
+                            <span class="perfil-photo__head"></span>
+                            <span class="perfil-photo__robe"></span>
+                        </div>
+                        <button type="button" class="perfil-photo-edit" aria-label="Alterar foto de perfil">
+                            <span class="perfil-icon perfil-icon--camera" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                    <div class="perfil-summary-card__identity">
+                        <h1>Dr. Magistrado</h1>
+                        <p>TJPR - Tribunal de Justiça</p>
+                    </div>
+
+                    <dl class="perfil-summary-list">
+                        <div>
+                            <dt><span class="perfil-icon perfil-icon--id" aria-hidden="true"></span>OAB / MATRÍCULA</dt>
+                            <dd>PR-123456</dd>
+                        </div>
+                        <div>
+                            <dt><span class="perfil-icon perfil-icon--mail" aria-hidden="true"></span>E-MAIL INSTITUCIONAL</dt>
+                            <dd>magistrado@tjpr.jus.br</dd>
+                        </div>
+                    </dl>
+                </section>
+
+                <nav class="perfil-menu-card" aria-label="Configurações da conta">
+                    <a href="#">
+                        <span><span class="perfil-icon perfil-icon--shield" aria-hidden="true"></span>Privacidade e Segurança</span>
+                        <span class="perfil-chevron" aria-hidden="true"></span>
+                    </a>
+                    <a href="#">
+                        <span><span class="perfil-icon perfil-icon--bell" aria-hidden="true"></span>Notificações</span>
+                        <span class="perfil-chevron" aria-hidden="true"></span>
+                    </a>
+                    <a class="perfil-menu-card__danger" href="#">
+                        <span><span class="perfil-icon perfil-icon--logout" aria-hidden="true"></span>Sair da Conta</span>
+                        <span class="perfil-chevron" aria-hidden="true"></span>
+                    </a>
+                </nav>
+            </aside>
+
+            <section class="perfil-content" aria-label="Dados profissionais">
+                <form class="perfil-form-card">
+                    <div class="perfil-section-heading">
+                        <h2>Informações Profissionais</h2>
+                        <p>Mantenha seus dados atualizados para relatórios oficiais.</p>
+                    </div>
+
+                    <div class="perfil-form-grid">
+                        <label class="perfil-field">
+                            <span>NOME COMPLETO</span>
+                            <input type="text" value="Dr. Magistrado da Silva Sauro">
+                        </label>
+                        <label class="perfil-field">
+                            <span>E-MAIL</span>
+                            <input type="email" value="magistrado@tjpr.jus.br">
+                        </label>
+                        <label class="perfil-field">
+                            <span>NÚMERO DA OAB / MATRÍCULA</span>
+                            <input type="text" value="PR-123456">
+                        </label>
+                        <label class="perfil-field">
+                            <span>TRIBUNAL / ORGANIZAÇÃO</span>
+                            <textarea readonly>Tribunal de Justiça do Paraná (TJPR)</textarea>
+                        </label>
+                        <label class="perfil-field">
+                            <span>VARA / COMARCA</span>
+                            <select>
+                                <option>Vara Criminal - Curitiba</option>
+                                <option>Vara Criminal - Londrina</option>
+                                <option>Vara Criminal - Maringá</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="perfil-form-actions">
+                        <div class="perfil-form-actions__primary">
+                            <button type="submit" class="perfil-button perfil-button--primary">SALVAR ALTERAÇÕES</button>
+                            <button type="reset" class="perfil-button perfil-button--outline">CANCELAR</button>
+                        </div>
+                        <button type="button" class="perfil-button perfil-button--danger">
+                            <span class="perfil-icon perfil-icon--trash" aria-hidden="true"></span>
+                            EXCLUIR CONTA
+                        </button>
+                    </div>
+                </form>
+
+                <section class="perfil-history-card">
+                    <div class="perfil-history-card__header">
+                        <h2>Últimas Dosimetrias</h2>
+                        <a href="histotrico.html">Ver Histórico</a>
+                    </div>
+
+                    <div class="perfil-table-wrap">
+                        <table class="perfil-history-table">
+                            <thead>
+                                <tr>
+                                    <th>DATA</th>
+                                    <th>RÉU</th>
+                                    <th>PENA FINAL</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>15/05/2024</td>
+                                    <td>João dos Santos Silva</td>
+                                    <td><strong>06 Anos, 08 Meses</strong></td>
+                                    <td><span class="perfil-status">CONCLUÍDO</span></td>
+                                </tr>
+                                <tr>
+                                    <td>14/05/2024</td>
+                                    <td>Maria Oliveira Peixoto</td>
+                                    <td><strong>04 Anos, 02 Meses</strong></td>
+                                    <td><span class="perfil-status">CONCLUÍDO</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <nav class="bottom-nav-bar perfil-bottom-nav-bar" data-name="BottomNavBar">
+            <a href="index.html" class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-1.svg" alt="">
+                <span>Calculadora</span>
+            </a>
+            <a href="histotrico.html" class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-2.svg" alt="">
+                <span>Histórico</span>
+            </a>
+            <a href="perfil.html" class="bottom-nav-bar__item bottom-nav-bar__item--active" data-name="Container">
+                <img src="assets/figma/icon-bottom-3.svg" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Histórico</title>
+</head>
+<body class="historico-page">
+    <div class="screen-frame historico-screen-frame">
+        <header class="top-app-bar" data-name="Header - TopAppBar">
+            <div class="top-app-bar__brand" data-name="Container">
+                <div class="top-app-bar__logo historico-top-app-bar__logo" data-name="TJPR Logo">
+                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
+                </div>
+                <div class="historico-top-app-bar__text" data-name="Container">
+                    <div class="top-app-bar__title historico-top-app-bar__title" data-name="Heading 1">
+                        <span>TJPR DOSIMETRIA</span>
+                    </div>
+                    <a class="historico-back-link" href="index.html" aria-label="Voltar para a calculadora principal">Voltar para a calculadora</a>
+                </div>
+            </div>
+            <div class="top-app-bar__profile" data-name="Container">
+                <div class="historico-avatar" aria-hidden="true"></div>
+            </div>
+        </header>
+
+        <main class="historico-main" aria-label="Tela de histórico">
+            <section class="historico-hero">
+                <h1 class="historico-title">Histórico de Penas</h1>
+                <p class="historico-description">Gerencie e consulte dosimetrias realizadas anteriormente.</p>
+
+                <form class="historico-search" id="historico-search-form" role="search">
+                    <label class="historico-search__field" for="historico-search-input">
+                        <span class="historico-search__icon" aria-hidden="true"></span>
+                        <input
+                            id="historico-search-input"
+                            class="historico-search__input"
+                            type="search"
+                            placeholder="Buscar por réu ou crime..."
+                            autocomplete="off"
+                            aria-label="Buscar por réu ou crime"
+                        >
+                    </label>
+                    <button type="button" class="historico-filter-button action-button action-button--ghost" aria-pressed="false">
+                        <span class="historico-filter-button__icon" aria-hidden="true"></span>
+                        FILTRAR
+                    </button>
+                </form>
+            </section>
+
+            <section class="historico-list" aria-label="Registros do histórico">
+                <article class="historico-card" data-history-card data-searchable-text="#8429-2024 24/05/2024 14:30 João da Silva Pereira Processo 0001234-56 Art. 157, § 2º, II, CP Roubo Majorado 05 anos e 04 meses Regime semiaberto">
+                    <div class="historico-card__accent" aria-hidden="true"></div>
+                    <div class="historico-card__body">
+                        <div class="historico-card__meta-row">
+                            <div class="historico-card__meta-group">
+                                <span class="historico-card__eyebrow">ID &amp; DATA</span>
+                                <span class="historico-card__id">#8429-2024</span>
+                                <span class="historico-card__date">24/05/2024 • 14:30</span>
+                            </div>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">RÉU</span>
+                            <strong class="historico-card__name">João da Silva Pereira</strong>
+                            <span class="historico-card__process">Processo: 0001234-56</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">DELITO</span>
+                            <span class="historico-card__crime">Art. 157, § 2º, II, CP</span>
+                            <span class="historico-card__crime-detail">Roubo Majorado</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">PENA FINAL</span>
+                            <span class="historico-card__penalty">05 anos e 04 meses</span>
+                            <span class="historico-card__regime">REGIME SEMIABERTO</span>
+                        </div>
+
+                        <div class="historico-card__divider" aria-hidden="true"></div>
+
+                        <div class="historico-card__actions">
+                            <button type="button" class="historico-card__action historico-card__action--primary" data-history-action="details">
+                                <span class="historico-icon historico-icon--eye" aria-hidden="true"></span>
+                                DETALHES
+                            </button>
+                            <button type="button" class="historico-card__action historico-card__action--secondary" data-history-action="pdf">
+                                <span class="historico-icon historico-icon--pdf" aria-hidden="true"></span>
+                                GERAR PDF
+                            </button>
+                        </div>
+
+                        <button type="button" class="historico-card__delete" data-history-action="delete">
+                            <span class="historico-icon historico-icon--trash" aria-hidden="true"></span>
+                            EXCLUIR
+                        </button>
+                    </div>
+                </article>
+
+                <article class="historico-card" data-history-card data-searchable-text="#8428-2024 23/05/2024 10:15 Maria Oliveira Santos Processo 0005678-12 Art. 33, Caput, Lei 11.343 Tráfico de Drogas 01 ano e 08 meses Regime aberto">
+                    <div class="historico-card__accent" aria-hidden="true"></div>
+                    <div class="historico-card__body">
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">ID &amp; DATA</span>
+                            <span class="historico-card__id">#8428-2024</span>
+                            <span class="historico-card__date">23/05/2024 • 10:15</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">RÉU</span>
+                            <strong class="historico-card__name">Maria Oliveira Santos</strong>
+                            <span class="historico-card__process">Processo: 0005678-12</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">DELITO</span>
+                            <span class="historico-card__crime">Art. 33, Caput, Lei 11.343</span>
+                            <span class="historico-card__crime-detail">Tráfico de Drogas</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">PENA FINAL</span>
+                            <span class="historico-card__penalty">01 ano e 08 meses</span>
+                            <span class="historico-card__regime">REGIME ABERTO</span>
+                        </div>
+
+                        <div class="historico-card__divider" aria-hidden="true"></div>
+
+                        <div class="historico-card__actions">
+                            <button type="button" class="historico-card__action historico-card__action--primary" data-history-action="details">
+                                <span class="historico-icon historico-icon--eye" aria-hidden="true"></span>
+                                DETALHES
+                            </button>
+                            <button type="button" class="historico-card__action historico-card__action--secondary" data-history-action="pdf">
+                                <span class="historico-icon historico-icon--pdf" aria-hidden="true"></span>
+                                GERAR PDF
+                            </button>
+                        </div>
+
+                        <button type="button" class="historico-card__delete" data-history-action="delete">
+                            <span class="historico-icon historico-icon--trash" aria-hidden="true"></span>
+                            EXCLUIR
+                        </button>
+                    </div>
+                </article>
+
+                <article class="historico-card" data-history-card data-searchable-text="#8425-2024 20/05/2024 09:00 Ricardo Mendonça Processo 0009988-77 Art. 121, § 2º, I, IV Homicídio Qualificado 18 anos e 00 meses Regime fechado">
+                    <div class="historico-card__accent" aria-hidden="true"></div>
+                    <div class="historico-card__body">
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">ID &amp; DATA</span>
+                            <span class="historico-card__id">#8425-2024</span>
+                            <span class="historico-card__date">20/05/2024 • 09:00</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">RÉU</span>
+                            <strong class="historico-card__name">Ricardo Mendonça</strong>
+                            <span class="historico-card__process">Processo: 0009988-77</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">DELITO</span>
+                            <span class="historico-card__crime">Art. 121, § 2º, I, IV</span>
+                            <span class="historico-card__crime-detail">Homicídio Qualificado</span>
+                        </div>
+
+                        <div class="historico-card__meta-group">
+                            <span class="historico-card__eyebrow">PENA FINAL</span>
+                            <span class="historico-card__penalty">18 anos e 00 meses</span>
+                            <span class="historico-card__regime">REGIME FECHADO</span>
+                        </div>
+
+                        <div class="historico-card__divider" aria-hidden="true"></div>
+
+                        <div class="historico-card__actions">
+                            <button type="button" class="historico-card__action historico-card__action--primary" data-history-action="details">
+                                <span class="historico-icon historico-icon--eye" aria-hidden="true"></span>
+                                DETALHES
+                            </button>
+                            <button type="button" class="historico-card__action historico-card__action--secondary" data-history-action="pdf">
+                                <span class="historico-icon historico-icon--pdf" aria-hidden="true"></span>
+                                GERAR PDF
+                            </button>
+                        </div>
+
+                        <button type="button" class="historico-card__delete" data-history-action="delete">
+                            <span class="historico-icon historico-icon--trash" aria-hidden="true"></span>
+                            EXCLUIR
+                        </button>
+                    </div>
+                </article>
+
+                <button type="button" class="historico-load-more action-button action-button--outline" id="historico-load-more">
+                    CARREGAR MAIS REGISTROS
+                </button>
+            </section>
+        </main>
+
+        <nav class="bottom-nav-bar historico-bottom-nav-bar" data-name="BottomNavBar (Mobile Only)">
+            <a href="index.html" class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-1.svg" alt="">
+                <span>Calculadora</span>
+            </a>
+            <a href="histotrico.html" class="bottom-nav-bar__item bottom-nav-bar__item--active" data-name="Container">
+                <img src="assets/figma/icon-bottom-2.svg" alt="">
+                <span>Histórico</span>
+            </a>
+            <a href="perfil.html" class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-3.svg" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

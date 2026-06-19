@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const isHistoricoPage = document.body.classList.contains('historico-page');
   const toggleButtons = document.querySelectorAll('.circumstance-card__toggle');
   const quantityValue = document.querySelector('.section-circumstances__quantity span:last-child');
   const intervalLabel = document.querySelector('.section__interval span:last-child');
@@ -85,6 +86,99 @@ document.addEventListener('DOMContentLoaded', () => {
   if (penaMaxInput) {
     penaMaxInput.addEventListener('input', updateResultCard);
   }
+
+  const profileQuickAction = document.querySelector('[data-app-action="profile"]');
+
+  const historySearchInput = document.querySelector('#historico-search-input');
+  const historySearchForm = document.querySelector('#historico-search-form');
+  const historyCards = Array.from(document.querySelectorAll('[data-history-card]'));
+  const historyLoadMoreButton = document.querySelector('#historico-load-more');
+  const historyFilterButton = document.querySelector('.historico-filter-button');
+
+  function updateHistoryVisibility() {
+    if (!historySearchInput || historyCards.length === 0) return;
+
+    const query = historySearchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    historyCards.forEach(card => {
+      const searchableText = (card.getAttribute('data-searchable-text') || '').toLowerCase();
+      const isVisible = query === '' || searchableText.includes(query);
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (historyLoadMoreButton) {
+      historyLoadMoreButton.hidden = visibleCount === 0;
+      historyLoadMoreButton.textContent = query ? 'LIMPAR FILTRO' : 'CARREGAR MAIS REGISTROS';
+    }
+  }
+
+  if (historySearchInput) {
+    historySearchInput.addEventListener('input', updateHistoryVisibility);
+  }
+
+  if (historySearchForm) {
+    historySearchForm.addEventListener('submit', event => {
+      event.preventDefault();
+      updateHistoryVisibility();
+    });
+  }
+
+  if (historyLoadMoreButton) {
+    historyLoadMoreButton.addEventListener('click', () => {
+      if (historySearchInput && historySearchInput.value.trim() !== '') {
+        historySearchInput.value = '';
+        updateHistoryVisibility();
+        historySearchInput.focus();
+      } else {
+        showDevWarning('Mais registros podem ser carregados aqui em uma integração futura.');
+      }
+    });
+  }
+
+  if (historyFilterButton) {
+    historyFilterButton.addEventListener('click', () => {
+      const isPressed = historyFilterButton.getAttribute('aria-pressed') === 'true';
+      historyFilterButton.setAttribute('aria-pressed', String(!isPressed));
+      showDevWarning('Filtro visual acionado. A filtragem por campos pode ser expandida depois.');
+    });
+  }
+
+  if (profileQuickAction) {
+    profileQuickAction.addEventListener('click', () => {
+      showDevWarning('Perfil ainda não está disponível nesta versão.');
+    });
+  }
+
+  document.querySelectorAll('[data-history-action]').forEach(button => {
+    button.addEventListener('click', () => {
+      const action = button.getAttribute('data-history-action');
+      if (action === 'delete') {
+        const card = button.closest('[data-history-card]');
+        if (card) {
+          card.remove();
+          updateHistoryVisibility();
+        }
+        showDevWarning('Registro removido da visualização local.');
+        return;
+      }
+
+      if (action === 'pdf') {
+        showDevWarning('Geração de PDF ainda não está integrada.');
+        return;
+      }
+
+      if (action === 'details') {
+        showDevWarning('Detalhes do processo podem ser abertos aqui.');
+      }
+    });
+  });
+
+  if (isHistoricoPage) {
+    updateHistoryVisibility();
+  }
+
   // Development warning toast
   const devToast = document.createElement('div');
   devToast.className = 'dev-toast';
@@ -107,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Attach warning to primary interactive elements (navigation, footer links, action buttons)
-  const warnSelectors = ['.action-button', '.bottom-nav-bar__item', '.footer__links a'];
+  const warnSelectors = ['.action-button', '.footer__links a', '.historico-card__action', '.historico-card__delete'];
   document.querySelectorAll(warnSelectors.join(',')).forEach(el => {
     el.addEventListener('click', () => {
       showDevWarning('Este site ainda está em desenvolvimento');
