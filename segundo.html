@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>2ª Fase - Dosimetria</title>
+</head>
+<body class="segundo-page">
+    <div class="screen-frame segundo-screen-frame">
+        <header class="top-app-bar segundo-top-app-bar" data-name="Header - TopAppBar">
+            <a class="top-app-bar__brand" href="index.html" data-name="Container" aria-label="Voltar para a calculadora">
+                <div class="top-app-bar__logo segundo-top-app-bar__logo" data-name="TJPR Logo">
+                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
+                </div>
+                <div class="top-app-bar__title segundo-top-app-bar__title" data-name="Heading 1">
+                    <span>TJPR DOSIMETRIA</span>
+                </div>
+            </a>
+            <div class="segundo-header-actions">
+                <a class="segundo-header-link" href="index.html">1ª fase</a>
+                <a class="perfil-header-avatar" href="perfil.html" aria-label="Perfil do magistrado">
+                    <span class="perfil-avatar-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </header>
+
+        <main class="segundo-main" aria-label="2ª fase da dosimetria penal">
+            <section class="segundo-summary" aria-label="Resumo da dosimetria">
+                <article class="segundo-reference-card">
+                    <div class="segundo-kicker">
+                        <span class="segundo-kicker__icon" aria-hidden="true"></span>
+                        REFERÊNCIA DA 1ª FASE
+                    </div>
+                    <h1>Pena-Base Fixada: 05 anos e 04 meses</h1>
+                    <p>Réu: João da Silva Sauro | Processo: 0001234-56.2023.8.16.0001</p>
+                </article>
+
+                <article class="segundo-current-card">
+                    <span>PENA PROVISÓRIA ATUAL</span>
+                    <strong>05a 04m 00d</strong>
+                    <p><span aria-hidden="true">↔</span> Sem alterações na 2ª fase</p>
+                </article>
+            </section>
+
+            <section class="segundo-factors" aria-label="Agravantes e atenuantes">
+                <section class="segundo-factor-section segundo-factor-section--aggravating" aria-labelledby="agravantes-title">
+                    <div class="segundo-factor-section__title">
+                        <span class="segundo-factor-icon" aria-hidden="true">!</span>
+                        <h2 id="agravantes-title">Agravantes (Art. 61 e 62)</h2>
+                    </div>
+
+                    <div class="segundo-factor-list">
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="agravantes" value="reincidencia">
+                            <span class="segundo-factor-item__body">
+                                <strong>Reincidência (Art. 61, I)</strong>
+                                <span>O agente comete novo crime, depois de transitar em julgado a sentença.</span>
+                                <span class="segundo-fraction-row">
+                                    <span>FRAÇÃO:</span>
+                                    <select form="segunda-fase-form" aria-label="Fração da reincidência">
+                                        <option>1/6 (Padrão)</option>
+                                        <option>1/5</option>
+                                        <option>1/4</option>
+                                    </select>
+                                </span>
+                            </span>
+                        </label>
+
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="agravantes" value="motivo-torpe">
+                            <span class="segundo-factor-item__body">
+                                <strong>Motivo Fútil ou Torpe (Art. 61, II, a)</strong>
+                                <span>Crime praticado por motivo insignificante ou moralmente reprovável.</span>
+                            </span>
+                        </label>
+
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="agravantes" value="parentesco">
+                            <span class="segundo-factor-item__body">
+                                <strong>Parentesco / Cônjuge (Art. 61, II, e)</strong>
+                                <span>Contra ascendente, descendente, irmão ou cônjuge.</span>
+                            </span>
+                        </label>
+
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="agravantes" value="abuso-poder">
+                            <span class="segundo-factor-item__body">
+                                <strong>Abuso de Poder (Art. 61, II, f)</strong>
+                                <span>Com abuso de autoridade ou prevalecendo-se de relações domésticas.</span>
+                            </span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="segundo-factor-section segundo-factor-section--mitigating" aria-labelledby="atenuantes-title">
+                    <div class="segundo-factor-section__title">
+                        <span class="segundo-factor-icon" aria-hidden="true">↓</span>
+                        <h2 id="atenuantes-title">Atenuantes (Art. 65 e 66)</h2>
+                    </div>
+
+                    <div class="segundo-factor-list">
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="atenuantes" value="menoridade-senilidade">
+                            <span class="segundo-factor-item__body">
+                                <strong>Menoridade / Senilidade (Art. 65, I)</strong>
+                                <span>Agente menor de 21 na data do fato ou maior de 70 na sentença.</span>
+                            </span>
+                        </label>
+
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="atenuantes" value="confissao">
+                            <span class="segundo-factor-item__body">
+                                <strong>Confissão Espontânea (Art. 65, III, d)</strong>
+                                <span>Confessado espontaneamente, perante a autoridade, a autoria do crime.</span>
+                                <span class="segundo-fraction-row">
+                                    <span>FRAÇÃO:</span>
+                                    <select form="segunda-fase-form" aria-label="Fração da confissão espontânea">
+                                        <option>1/6 (Padrão)</option>
+                                        <option>1/5</option>
+                                        <option>1/4</option>
+                                    </select>
+                                </span>
+                            </span>
+                        </label>
+
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="atenuantes" value="desconhecimento-lei">
+                            <span class="segundo-factor-item__body">
+                                <strong>Desconhecimento da Lei (Art. 65, II)</strong>
+                                <span>O desconhecimento da lei é inescusável, mas atenua a pena.</span>
+                            </span>
+                        </label>
+
+                        <label class="segundo-factor-item">
+                            <input form="segunda-fase-form" type="checkbox" name="atenuantes" value="clausula-aberta">
+                            <span class="segundo-factor-item__body">
+                                <strong>Cláusula Aberta (Art. 66)</strong>
+                                <span>Circunstância relevante, anterior ou posterior ao crime.</span>
+                            </span>
+                        </label>
+                    </div>
+                </section>
+            </section>
+
+            <section class="segundo-actions" aria-label="Ações da segunda fase">
+                <a class="action-button action-button--outline" href="index.html">VOLTAR PARA 1ª FASE</a>
+                <button class="action-button segundo-action-clear" type="reset" form="segunda-fase-form">LIMPAR SELEÇÃO</button>
+                <button class="action-button action-button--primary" type="button">
+                    PROSSEGUIR PARA 3ª FASE
+                    <span aria-hidden="true">›</span>
+                </button>
+            </section>
+        </main>
+
+        <form id="segunda-fase-form" hidden></form>
+
+        <nav class="bottom-nav-bar segundo-bottom-nav-bar" data-name="BottomNavBar (Mobile Only)">
+            <a href="index.html" class="bottom-nav-bar__item bottom-nav-bar__item--active" data-name="Container">
+                <img src="assets/figma/icon-bottom-1.svg" alt="">
+                <span>Calculadora</span>
+            </a>
+            <a href="histotrico.html" class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-2.svg" alt="">
+                <span>Histórico</span>
+            </a>
+            <a href="perfil.html" class="bottom-nav-bar__item" data-name="Container">
+                <img src="assets/figma/icon-bottom-3.svg" alt="">
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
