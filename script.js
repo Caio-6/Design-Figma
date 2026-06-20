@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const isHistoricoPage = document.body.classList.contains('historico-page');
+  const isSegundoPage = document.body.classList.contains('segundo-page');
+  const sessionPenaltyKey = 'dosimetria:firstPhaseResult';
   const toggleButtons = document.querySelectorAll('.circumstance-card__toggle');
   const quantityValue = document.querySelector('.section-circumstances__quantity span:last-child');
   const intervalLabel = document.querySelector('.section__interval span:last-child');
@@ -8,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const penaMinInput = document.querySelector('#pena-minima');
   const penaMaxInput = document.querySelector('#pena-maxima');
   const form = document.querySelector('#dosimetria-form');
+  const secondPhaseReferenceValue = document.querySelector('.segundo-reference-card h1');
+  const secondPhaseCurrentValue = document.querySelector('.segundo-current-card strong');
+  const secondPhaseCurrentNote = document.querySelector('.segundo-current-card p');
 
   function formatYearsMonths(years) {
     const rounded = Math.max(0, Math.round(years));
@@ -17,6 +22,59 @@ document.addEventListener('DOMContentLoaded', () => {
   function computePenalty(minValue, selectedCount) {
     const factor = 1 + selectedCount / 8;
     return Math.round(minValue * factor * 12);
+  }
+
+  function formatPenalty(totalMonths) {
+    const safeMonths = Math.max(0, Math.round(totalMonths));
+    const years = Math.floor(safeMonths / 12);
+    const months = safeMonths % 12;
+    return {
+      years,
+      months,
+      text: `${years} anos, ${months} meses`,
+      shortText: `${String(years).padStart(2, '0')}a ${String(months).padStart(2, '0')}m 00d`
+    };
+  }
+
+  function saveFirstPhaseResult(result) {
+    try {
+      window.sessionStorage.setItem(sessionPenaltyKey, JSON.stringify(result));
+    } catch (error) {
+      console.warn('Não foi possível salvar o cálculo da 1ª fase na sessão.', error);
+    }
+  }
+
+  function loadFirstPhaseResult() {
+    try {
+      const rawValue = window.sessionStorage.getItem(sessionPenaltyKey);
+      return rawValue ? JSON.parse(rawValue) : null;
+    } catch (error) {
+      console.warn('Não foi possível ler o cálculo da 1ª fase da sessão.', error);
+      return null;
+    }
+  }
+
+  function applySecondPhaseResult() {
+    if (!isSegundoPage) return;
+
+    const storedResult = loadFirstPhaseResult();
+    if (!storedResult) return;
+
+    const totalMonths = Number(storedResult.totalMonths) || 0;
+    const penalty = formatPenalty(totalMonths);
+    const baseText = storedResult.resultText || penalty.text;
+
+    if (secondPhaseReferenceValue) {
+      secondPhaseReferenceValue.textContent = `Pena-Base Fixada: ${baseText}`;
+    }
+
+    if (secondPhaseCurrentValue) {
+      secondPhaseCurrentValue.textContent = penalty.shortText;
+    }
+
+    if (secondPhaseCurrentNote) {
+      secondPhaseCurrentNote.innerHTML = '<span aria-hidden="true">↔</span> Pena-base carregada da 1ª fase';
+    }
   }
 
   function updateQuantity() {
@@ -42,15 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxValue = Math.max(minValue, Number(penaMaxInput.value) || minValue);
     const selectedCount = updateQuantity();
     const totalMonths = computePenalty(minValue, selectedCount);
-    const resultYears = Math.floor(totalMonths / 12);
-    const resultMonths = totalMonths % 12;
+    const result = formatPenalty(totalMonths);
 
-    resultValue.textContent = `${resultYears} anos, ${resultMonths} meses`;
+    resultValue.textContent = result.text;
     resultNote.textContent = selectedCount > 0
       ? `${selectedCount} circunstância${selectedCount === 1 ? '' : 's'} negativa${selectedCount === 1 ? '' : 's'} aplicada${selectedCount === 1 ? '' : 's'}.`
       : 'Nenhuma circunstância negativa aplicada.';
 
     updateInterval();
+
+    saveFirstPhaseResult({
+      minValue,
+      maxValue,
+      selectedCount,
+      totalMonths,
+      resultText: result.text,
+      resultShortText: result.shortText
+    });
   }
 
   function resetSelections() {
@@ -178,6 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (isHistoricoPage) {
     updateHistoryVisibility();
   }
+
+  applySecondPhaseResult();
 
   // Development warning toast
   const devToast = document.createElement('div');
