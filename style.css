@@ -2424,3 +2424,164 @@ body.perfil-page {
     border-radius: 16px 16px 0 0;
   }
 }
+
+/* ==========================
+   TERCEIRA FASE
+========================== */
+
+body.terceiro-page{
+    display:block;
+    padding:0;
+    min-height:100vh;
+    background:#F8F9FA;
+}
+
+.terceiro-page .screen-frame{
+    width:100%;
+    max-width:100%;
+    min-height:100vh;
+    padding-bottom:90px;
+}
+
+.terceiro-main{
+    max-width:430px;
+    margin:0 auto;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.terceiro-top-app-bar__title{
+    font-size:20px;
+    font-weight:700;
+    color:#002046;
+}
+
+.terceiro-steps{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.terceiro-step{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#74777F;
+    font-weight:700;
+}
+
+.terceiro-step-number{
+    width:24px;
+    height:24px;
+    border:2px solid currentColor;
+    border-radius:4px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+
+.terceiro-step--active{
+    background:#BFD3FF;
+    padding:16px;
+    border-radius:16px;
+    color:#002046;
+}
+
+.terceiro-base-card,
+.terceiro-form-card{
+    background:#FFF;
+    border:1px solid #C4C6CF;
+    border-radius:12px;
+    padding:24px;
+}
+
+.terceiro-card-label{
+    font-size:12px;
+    font-weight:700;
+    color:#44474E;
+}
+
+.terceiro-pena{
+    display:flex;
+    gap:32px;
+    margin:16px 0 8px;
+}
+
+.terceiro-pena strong{
+    font-size:32px;
+    color:#002046;
+}
+
+.terceiro-header h1{
+    margin:0;
+    color:#002046;
+    font-size:24px;
+}
+
+.terceiro-header p{
+    margin-top:8px;
+    color:#44474E;
+}
+
+.terceiro-title{
+    margin:0 0 24px;
+    font-size:16px;
+    font-weight:700;
+}
+
+.terceiro-title--red{
+    color:#BA1A1A;
+}
+
+.terceiro-title--blue{
+    color:#475F87;
+}
+
+.terceiro-result-card{
+    background:#002046;
+    color:white;
+    border-radius:12px;
+    padding:24px;
+}
+
+.terceiro-result-card__label{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.05em;
+}
+
+.terceiro-result-card h2{
+    margin:12px 0;
+    font-size:28px;
+    line-height:1.15;
+}
+
+.terceiro-result-card p{
+    color:#D8E3F5;
+}
+
+.terceiro-pdf-button{
+    width:100%;
+    min-height:64px;
+    margin-top:16px;
+    border:none;
+    border-radius:8px;
+    background:#D8E3F5;
+    color:#002046;
+    font-weight:700;
+    cursor:pointer;
+}
+
+@media(min-width:768px){
+
+    .terceiro-main{
+        max-width:900px;
+    }
+
+    .terceiro-form-card{
+        padding:32px;
+    }
+}
