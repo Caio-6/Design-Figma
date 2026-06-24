@@ -1506,11 +1506,32 @@ body.historico-page {
 }
 
 .historico-page .bottom-nav-bar__item {
-  color: #5A6370;
+  width: 75px;
+  height: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  text-decoration: none;
+  color: #ffffff;
+
+  border-radius: 24px;
+
+  transition: .25s;
 }
 
 .historico-page .bottom-nav-bar__item--active {
-  color: #123A63;
+  background: #1F3B6D;
+}
+.historico-page .bottom-nav-bar__item--active img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(16%) saturate(750%) hue-rotate(184deg);
+}
+.historico-page .bottom-nav-bar__item--active span {
+  color: #ededed !important;
 }
 
 .historico-page .bottom-nav-bar__item img {
