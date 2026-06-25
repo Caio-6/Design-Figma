@@ -29,119 +29,7 @@ button {
   padding: 112px 0 8px;
   background: #F8F9FA;
 }
-.top-app-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #EDEEEF;
-  border-bottom: 1px solid #C4C6CF;
-  padding: 8px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-.top-app-bar__brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.top-app-bar__logo {
-  width: 40px;
-  height: 40px;
-}
-.top-app-bar__logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.top-app-bar__title {
-  display: flex;
-  flex-direction: column;
-  font-family: Manrope, Inter, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.4;
-  color: #002046;
-}
-.top-app-bar__title span:last-child {
-  margin-top: -2px;
-}
-.top-app-bar__profile {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 999px;
-  color: inherit;
-  text-decoration: none;
-  transition: background-color 0.18s ease, box-shadow 0.18s ease;
-}
-.top-app-bar__profile:hover,
-.top-app-bar__profile:focus-visible {
-  background: rgba(0, 32, 70, 0.06);
-  box-shadow: 0 0 0 6px rgba(0, 32, 70, 0.06);
-}
-.top-app-bar__actions {
-  display: none;
-  align-items: center;
-  gap: 12px;
-  margin-left: auto;
-}
-.top-app-bar__action {
-  min-height: 44px;
-  min-width: 128px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-size: 12px;
-  line-height: 1.3333333;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
-}
-.top-app-bar__action:hover,
-.top-app-bar__action:focus-visible {
-  transform: translateY(-1px);
-}
-.top-app-bar__action--outline {
-  border-color: #002046;
-  background: #FFFFFF;
-  color: #002046;
-}
-.top-app-bar__action--outline:hover,
-.top-app-bar__action--outline:focus-visible {
-  background: rgba(0, 32, 70, 0.08);
-}
-.top-app-bar__action--solid {
-  background: #002046;
-  color: #FFFFFF;
-}
-.top-app-bar__action--solid:hover,
-.top-app-bar__action--solid:focus-visible {
-  background: #0E355F;
-}
-.top-app-bar__profile-text {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  line-height: 1.3333333;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #44474E;
-}
-.top-app-bar__avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #C4C6CF;
-}
+
 .main-frame {
   width: min(100%, 1040px);
   margin: 0 auto;
@@ -594,11 +482,6 @@ button {
   .screen-frame {
     padding: 132px 0 16px;
   }
-
-  .top-app-bar {
-    padding: 12px 24px;
-  }
-
   .main-frame {
     gap: 28px;
   }
@@ -641,20 +524,6 @@ button {
     padding: 32px;
   }
 
-  .top-app-bar__logo {
-    width: 48px;
-    height: 48px;
-  }
-
-  .top-app-bar__title {
-    font-size: 22px;
-  }
-
-  .top-app-bar__actions {
-    display: flex;
-  }
-}
-
 body.segundo-page {
   display: block;
   justify-content: initial;
@@ -673,35 +542,6 @@ body.segundo-page {
   padding: 0 0 88px;
   background: #F8F9FA;
 }
-
-.segundo-page .top-app-bar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  min-height: 64px;
-  padding: 12px 24px;
-  background: #F8F9FA;
-  border-bottom: 1px solid #C4C6CF;
-}
-
-.segundo-page .top-app-bar__brand {
-  color: inherit;
-  text-decoration: none;
-}
-
-.segundo-top-app-bar__logo {
-  width: 18px;
-  height: 19px;
-}
-
-.segundo-top-app-bar__title {
-  display: block;
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0;
-  color: #002046;
-}
-
 .segundo-header-actions {
   display: flex;
   align-items: center;
@@ -957,6 +797,7 @@ body.segundo-page {
   width: 100%;
   min-height: 48px;
   text-decoration: none;
+  align-items: center;
 }
 
 .segundo-action-clear {
@@ -1029,32 +870,6 @@ body.historico-page {
   position: relative;
 }
 
-.historico-page .top-app-bar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: #FFFFFF;
-  border-bottom: 1px solid #E1E4EA;
-  padding: 14px 18px;
-  box-shadow: 0 1px 0 rgba(12, 24, 44, 0.04);
-}
-
-.historico-top-app-bar__logo {
-  width: 28px;
-  height: 28px;
-}
-
-.historico-top-app-bar__title {
-  font-size: 16px;
-  letter-spacing: -0.01em;
-  color: #113A67;
-}
-
-.historico-top-app-bar__text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
 
 .historico-back-link {
   display: inline-flex;
@@ -1474,9 +1289,6 @@ body.historico-page {
 }
 
 @media (min-width: 640px) {
-  .historico-page .top-app-bar {
-    padding: 16px 24px;
-  }
 
   .historico-page .historico-main {
     padding: 28px 24px 36px;
@@ -1521,10 +1333,6 @@ body.historico-page {
 @media (min-width: 900px) {
   .historico-page .historico-main {
     padding: 32px 28px 40px;
-  }
-
-  .historico-page .top-app-bar {
-    padding: 18px 32px;
   }
 
   .historico-page .historico-main {
@@ -1624,30 +1432,6 @@ body.perfil-page {
   min-height: 100vh;
   padding: 0 0 88px;
   background: #F8F9FA;
-}
-
-.perfil-page .top-app-bar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  min-height: 65px;
-  padding: 12px 24px;
-  background: #F8F9FA;
-  border-bottom: 1px solid #C4C6CF;
-  box-shadow: none;
-}
-
-.perfil-top-app-bar__logo {
-  width: 18px;
-  height: 19px;
-}
-
-.perfil-top-app-bar__title {
-  display: block;
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0;
-  color: #002046;
 }
 
 .perfil-header-avatar {
@@ -2342,12 +2126,6 @@ body.terceiro-page{
     gap:24px;
 }
 
-.terceiro-top-app-bar__title{
-    font-size:20px;
-    font-weight:700;
-    color:#002046;
-}
-
 .terceiro-steps{
     display:flex;
     flex-direction:column;
@@ -2474,4 +2252,123 @@ body.terceiro-page{
     .terceiro-form-card{
         padding:32px;
     }
+}
+}
+/* ==========================================================================
+   TOP APP BAR (HEADER GLOBAL PADRONIZADO)
+   ========================================================================== */
+.top-app-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #EDEEEF;
+  border-bottom: 1px solid #C4C6CF;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  z-index: 999;
+}
+
+.top-app-bar__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-app-bar__logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-app-bar__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.top-app-bar__title {
+  color: #002046;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2727;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-app-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.top-app-bar__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.top-app-bar__action--outline {
+  border: 1px solid #74777F;
+  color: #1B365D;
+  background: transparent;
+}
+
+.top-app-bar__action--outline:hover {
+  background: rgba(27, 55, 93, 0.135);
+}
+
+.top-app-bar__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.top-app-bar__profile-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.top-app-bar__profile-text span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1B365D;
+}
+
+.top-app-bar__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1B365D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-app-bar__avatar-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2387A0CD'><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.top-app-bar__avatar-icon:hover{
+  outline: rgba(27, 55, 93, 0.135);  
 }

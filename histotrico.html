@@ -8,22 +8,26 @@
 </head>
 <body class="historico-page">
     <div class="screen-frame historico-screen-frame">
-        <header class="top-app-bar" data-name="Header - TopAppBar">
-            <div class="top-app-bar__brand" data-name="Container">
-                <div class="top-app-bar__logo historico-top-app-bar__logo" data-name="TJPR Logo">
-                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
-                </div>
-                <div class="historico-top-app-bar__text" data-name="Container">
-                    <div class="top-app-bar__title historico-top-app-bar__title" data-name="Heading 1">
-                        <span>TJPR DOSIMETRIA</span>
-                    </div>
-                    <a class="historico-back-link" href="index.html" aria-label="Voltar para a calculadora principal">Voltar para a calculadora</a>
-                </div>
-            </div>
-            <a class="top-app-bar__profile" href="perfil.html" data-name="Container" aria-label="Abrir perfil do magistrado">
-                <div class="historico-avatar" aria-hidden="true"></div>
-            </a>
-        </header>
+        <header class="top-app-bar">
+    <div class="top-app-bar__brand">
+        <div class="top-app-bar__logo">
+            <img src="assets/figma/logo-tjpr.svg" alt="Logo TJPR">
+        </div>
+        <div class="top-app-bar__title">
+            <span>TJPR DOSIMETRIA</span>
+            <a href="index.html" style="font-size: 12px; color: #1B365D; text-decoration: underline; margin-top: 2px;">Voltar para a calculadora</a>
+        </div>
+    </div>
+
+    <a class="top-app-bar__profile" href="perfil.html" aria-label="Perfil do magistrado">
+        <div class="top-app-bar__profile-text">
+            <span>Magistrado</span>
+        </div>
+        <div class="top-app-bar__avatar">
+            <span class="top-app-bar__avatar-icon" aria-hidden="true"></span>
+        </div>
+    </a>
+</header>
 
         <main class="historico-main" aria-label="Tela de histórico">
             <section class="historico-hero">

@@ -8,22 +8,29 @@
 </head>
 <body class="perfil-page">
     <div class="screen-frame perfil-screen-frame">
-        <header class="top-app-bar perfil-top-app-bar" data-name="Header - TopAppBar">
-            <div class="top-app-bar__brand" data-name="Container">
-                <div class="top-app-bar__logo perfil-top-app-bar__logo" data-name="TJPR Logo">
-                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
-                </div>
-                <div class="top-app-bar__title perfil-top-app-bar__title" data-name="Heading 1">
-                    <span>TJPR DOSIMETRIA</span>
-                </div>
-            </div>
-            <div class="perfil-header-actions">
-                <a class="perfil-header-button" href="index.html">Calculadora</a>
-                <a class="perfil-header-avatar" href="perfil.html" aria-label="Perfil do magistrado">
-                    <span class="perfil-avatar-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </header>
+        <header class="top-app-bar">
+    <div class="top-app-bar__brand">
+        <div class="top-app-bar__logo">
+            <img src="assets/figma/logo-tjpr.svg" alt="Logo TJPR">
+        </div>
+        <div class="top-app-bar__title">
+            <span>TJPR DOSIMETRIA</span>
+        </div>
+    </div>
+
+    <div class="top-app-bar__actions" aria-label="Ações da página">
+        <a class="top-app-bar__action top-app-bar__action--outline" href="index.html">Calculadora</a>
+    </div>
+
+    <a class="top-app-bar__profile" href="perfil.html" aria-label="Perfil do magistrado">
+        <div class="top-app-bar__profile-text">
+            <span>Magistrado</span>
+        </div>
+        <div class="top-app-bar__avatar">
+            <span class="top-app-bar__avatar-icon" aria-hidden="true"></span>
+        </div>
+    </a>
+</header>
 
         <main class="perfil-main" aria-label="Tela de perfil">
             <aside class="perfil-sidebar" aria-label="Resumo do perfil">

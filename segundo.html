@@ -8,22 +8,29 @@
 </head>
 <body class="segundo-page">
     <div class="screen-frame segundo-screen-frame">
-        <header class="top-app-bar segundo-top-app-bar" data-name="Header - TopAppBar">
-            <a class="top-app-bar__brand" href="index.html" data-name="Container" aria-label="Voltar para a calculadora">
-                <div class="top-app-bar__logo segundo-top-app-bar__logo" data-name="TJPR Logo">
-                    <img src="assets/figma/logo-tjpr.svg" alt="TJPR Logo">
-                </div>
-                <div class="top-app-bar__title segundo-top-app-bar__title" data-name="Heading 1">
-                    <span>TJPR DOSIMETRIA</span>
-                </div>
-            </a>
-            <div class="segundo-header-actions">
-                <a class="segundo-header-link" href="index.html">1ª fase</a>
-                <a class="perfil-header-avatar" href="perfil.html" aria-label="Perfil do magistrado">
-                    <span class="perfil-avatar-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </header>
+        <header class="top-app-bar">
+    <a class="top-app-bar__brand" href="index.html" aria-label="Voltar para a calculadora">
+        <div class="top-app-bar__logo">
+            <img src="assets/figma/logo-tjpr.svg" alt="Logo TJPR">
+        </div>
+        <div class="top-app-bar__title">
+            <span>TJPR DOSIMETRIA</span>
+        </div>
+    </a>
+
+    <div class="top-app-bar__actions" aria-label="Ações da página">
+        <a class="top-app-bar__action top-app-bar__action--outline" href="index.html">1ª fase</a>
+    </div>
+
+    <a class="top-app-bar__profile" href="perfil.html" aria-label="Perfil do magistrado">
+        <div class="top-app-bar__profile-text">
+            <span>Magistrado</span>
+        </div>
+        <div class="top-app-bar__avatar">
+            <span class="top-app-bar__avatar-icon" aria-hidden="true"></span>
+        </div>
+    </a>
+</header>
 
         <main class="segundo-main" aria-label="2ª fase da dosimetria penal">
             <section class="segundo-summary" aria-label="Resumo da dosimetria">
