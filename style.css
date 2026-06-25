@@ -53,9 +53,14 @@ button {
   font-weight: 500;
   color: #44474E;
 }
-.breadcrumbs-step__step {
+.breadcrumbs-step__step-active {
   font-weight: 700;
   color: #002046;
+}
+.breadcrumbs-step__step{
+  font-weight: 700;
+  color: #44474E;
+  text-decoration: none;
 }
 .content-columns {
   display: grid;
@@ -449,6 +454,7 @@ button {
   background: #002046;
   color: #FFFFFF;
   border-color: #002046;
+  align-items: center;
 }
 .action-button--primary:hover,
 .action-button--primary:focus-visible {
