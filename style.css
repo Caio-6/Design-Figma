@@ -460,27 +460,60 @@ button {
 .action-button--primary:focus-visible {
   background: #0E355F;
 }
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 .footer {
-  background: #F3F4F5;
-  border-top: 1px solid #C4C6CF;
+  width: 100vw; /* Força o footer a ter a largura total da janela do navegador */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;  /* Joga o início do footer para o extremo esquerdo da tela */
+  margin-right: -50vw; /* Joga o fim do footer para o extremo direito da tela */
+  
+  /* O padding-bottom extra (80px) garante espaço para a bottom-nav-bar no mobile */
+  padding: 32px 24px 80px 24px; 
+  background-color: transparent;
+  border-top: 1px solid #E0E2E5; /* Esta linha agora vai se esticar por toda a tela! */
+  font-family: Inter, system-ui, sans-serif;
+  color: #44474E;
+  font-size: 14px;
+  margin-top: 40px;
+  box-sizing: border-box;
 }
+
 .footer__content {
+  /* Alinha perfeitamente o conteúdo interno com o restante do seu projeto (.main-frame) */
+  width: min(100%, 1040px);
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 16px 24px;
+  text-align: center;
 }
+
 .footer__links {
   display: flex;
   gap: 24px;
-}
-.footer__links a {
-  text-decoration: none;
-  color: #44474E;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-@media (min-width: 640px) {
+.footer__links a {
+  color: #1B365D; /* Azul escuro do TJPR */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer__links a:hover,
+.footer__links a:focus {
+  text-decoration: underline;
+  color: #11223A;
+}
+
+@media (min-width: 768px) {
   body {
     padding: 32px;
   }
@@ -505,9 +538,14 @@ button {
     grid-column: 1 / -1;
   }
 
+  .footer {
+    padding: 32px 24px 40px 24px; 
+  }
+
   .footer__content {
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
+    text-align: left;
   }
 }
 body {
