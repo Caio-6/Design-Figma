@@ -99,6 +99,7 @@ button {
   gap: 16px;
 }
 .field-row {
+  width:100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -792,6 +793,13 @@ body.segundo-page {
   border-top: 1px solid #C4C6CF;
   display: grid;
   gap: 12px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;     /* Se faltar espaço, joga o restante para baixo */
+  justify-content: center !important; /* Centraliza a linha de baixo perfeitamente */
+  align-items: center !important;
+  gap: 16px !important;           /* Mantém o espaçamento exato entre eles */
+  width: 100% !important;
 }
 
 .segundo-actions .action-button {
@@ -800,11 +808,21 @@ body.segundo-page {
   text-decoration: none;
   align-items: center;
 }
-
-.segundo-action-clear {
-  border-color: transparent;
-  background: transparent;
-  color: #44474E;
+/* ==========================================================================
+   ALINHAMENTO DAS AÇÕES (BOTÕES)
+   ========================================================================== */
+.segundo-actions,
+.section-circumstances__actions {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os botões pulem para baixo se não houver espaço */
+  justify-content: center; /* Centraliza os botões (especialmente útil quando quebram de linha) */
+  align-items: center;
+  gap: 16px; /* Mantém um espaço respirável entre os botões */
+  width: 100%;
+}
+/* Garante que o botão de limpar siga a identidade visual dos outros outlines */
+.clear-button {
+  text-transform: uppercase;
 }
 
 @media (min-width: 640px) {
