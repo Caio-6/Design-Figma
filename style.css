@@ -464,26 +464,19 @@ button {
    FOOTER
    ========================================================================== */
 .footer {
-  width: 100vw; /* Força o footer a ter a largura total da janela do navegador */
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;  /* Joga o início do footer para o extremo esquerdo da tela */
-  margin-right: -50vw; /* Joga o fim do footer para o extremo direito da tela */
-  
-  /* O padding-bottom extra (80px) garante espaço para a bottom-nav-bar no mobile */
+  width: 100%;
+  /* O padding-bottom extra (80px) garante que a bottom-nav-bar (se for fixa no mobile) não cubra o footer */
   padding: 32px 24px 80px 24px; 
   background-color: transparent;
-  border-top: 1px solid #E0E2E5; /* Esta linha agora vai se esticar por toda a tela! */
+  border-top: 1px solid #E0E2E5; /* Linha sutil para separar do main */
   font-family: Inter, system-ui, sans-serif;
   color: #44474E;
   font-size: 14px;
-  margin-top: 40px;
-  box-sizing: border-box;
+  margin-top: 32px;
 }
 
 .footer__content {
-  /* Alinha perfeitamente o conteúdo interno com o restante do seu projeto (.main-frame) */
+  /* Alinha com o main-frame que tem max-width: 1040px */
   width: min(100%, 1040px);
   margin: 0 auto;
   display: flex;
@@ -501,7 +494,7 @@ button {
 }
 
 .footer__links a {
-  color: #1B365D; /* Azul escuro do TJPR */
+  color: #1B365D; /* Azul escuro do tema */
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease, text-decoration 0.2s ease;
@@ -538,14 +531,9 @@ button {
     grid-column: 1 / -1;
   }
 
-  .footer {
-    padding: 32px 24px 40px 24px; 
-  }
-
   .footer__content {
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    text-align: left;
   }
 }
 body {
@@ -875,7 +863,7 @@ body.historico-page {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  padding: 0 0 88px;
+  padding: 80px 0 88px;
   background: #F5F7FA;
 }
 
@@ -1443,7 +1431,7 @@ body.perfil-page {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  padding: 0 0 88px;
+  padding: 80px 0 88px;
   background: #F8F9FA;
 }
 
